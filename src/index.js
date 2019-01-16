@@ -1,6 +1,4 @@
 const $root = document.querySelector("#root");
-const $MemoryCard = document.createElement("article");
-const $MemoryCardFront = document.createElement("article");
 
 const $iconCollab = `<img class='icon' 
     src='img/icon-collabcode.png' 
@@ -12,11 +10,24 @@ const $iconJs = `<img class='icon'
     alt='Icone Livro da Linguaguem Javascript'>
   </img>`;
 
-$MemoryCard.classList.add("memory-card");
-$root.insertBefore($MemoryCard, null);
+createMemoryCardFront();
 
-$MemoryCardFront.classList.add("memory-card", "-front");
-$root.insertBefore($MemoryCardFront, $MemoryCard);
+for (let card = 1; card < 10; card++) {
+  createMemoryCard();
+}
 
-$MemoryCardFront.insertAdjacentHTML("afterbegin", $iconJs);
-$MemoryCard.insertAdjacentHTML("afterbegin", $iconCollab);
+function createMemoryCard() {
+  const $MemoryCard = document.createElement("article");
+
+  $MemoryCard.classList.add("memory-card");
+  $root.insertBefore($MemoryCard, null);
+  $MemoryCard.insertAdjacentHTML("afterbegin", $iconCollab);
+}
+
+function createMemoryCardFront() {
+  const $MemoryCardFront = document.createElement("article");
+
+  $MemoryCardFront.classList.add("memory-card", "-front");
+  $root.insertBefore($MemoryCardFront, null);
+  $MemoryCardFront.insertAdjacentHTML("afterbegin", $iconJs);
+}
