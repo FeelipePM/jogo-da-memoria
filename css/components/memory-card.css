@@ -1,13 +1,3 @@
-#root {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-#root > .memory-card {
-  margin: 5px;
-}
-
 .memory-card {
   width: 155px;
   height: 155px;
