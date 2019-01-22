@@ -1,59 +1,11 @@
-const cards = [
-  {
-    side: "front",
-    src: "js",
-    alt: "Livro Javascript"
-  },
-  {
-    side: "front",
-    src: "js",
-    alt: "Livro Javascript"
-  },
-  {
-    side: "back",
-    src: "collabcode",
-    alt: "Gueio - Mascote da CollabCode"
-  },
-  {
-    side: "back",
-    src: "collabcode",
-    alt: "Gueio - Mascote da CollabCode"
-  },
-  {
-    side: "back",
-    src: "collabcode",
-    alt: "Gueio - Mascote da CollabCode"
-  },
-  {
-    side: "back",
-    src: "collabcode",
-    alt: "Gueio - Mascote da CollabCode"
-  },
-  {
-    side: "back",
-    src: "collabcode",
-    alt: "Gueio - Mascote da CollabCode"
-  },
-  {
-    side: "back",
-    src: "collabcode",
-    alt: "Gueio - Mascote da CollabCode"
-  }
-];
+const createMemoryCard = (nameClass, src, alt) => `
+    <article class="memory-card ${nameClass}">
+    <img class='icon' 
+      src='${src}' 
+      alt='${alt}'
+      onClick="handleClick()">
+    </img>
+    </article>
+    `;
 
-const createMemoryCard = (src, side, alt) => {
-  const $memoryCard = `
-  <article class="memory-card -${side}">
-  <img class='icon' 
-    src='img/icon-${src}.png' 
-    alt='${alt}'
-    onClick="handleClick()">
-  </img>
-  </article>`;
-
-  return $memoryCard;
-};
-
-function handleClick() {
-  console.log("Funcionando");
-}
+const handleClick = () => console.log("Funcionando");
