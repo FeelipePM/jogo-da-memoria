@@ -1,15 +1,10 @@
 const $root = document.querySelector("#root");
 
 const $cardsWrapper = createCardsWrapper();
-const $memoryCard = createMemoryCard();
-const $memoryCardFront = createMemoryCardFront();
-
-for (let card = 0; card < 2; card++) {
-  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFront);
-}
-
-for (let card = 0; card < 6; card++) {
-  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
-}
 
 $root.insertAdjacentElement("beforeend", $cardsWrapper);
+
+cards.forEach(card => {
+  const $memoryCard = createMemoryCard(card.src, card.side, card.alt);
+  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
+});
