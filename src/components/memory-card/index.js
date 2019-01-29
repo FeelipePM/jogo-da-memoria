@@ -13,10 +13,21 @@ const memoryCard = () => {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(/img/icon-collabcode.png);
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
     cursor: pointer;
   }
   
   .memory-card > .icon {
+    display: none;
+    width: 100px;
+    height: 100px;
+  }
+
+  .memory-card.-front > .icon {
+    display: block;
     width: 100px;
     height: 100px;
   }
@@ -24,6 +35,7 @@ const memoryCard = () => {
   .memory-card.-front {
     background-color: #fff;
     position: relative;
+    background-image: none;
   }
   
   .memory-card.-front::before {
@@ -53,6 +65,3 @@ const memoryCard = () => {
     </article>
     `;
 };
-
-const handleClick = () => console.log("Funcionando");
-

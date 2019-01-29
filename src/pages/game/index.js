@@ -22,9 +22,10 @@ const $memoryCardJava = createMemoryCard({
   alt: "Icone Linguagem Java"
 });
 
-const $memoryCard = createMemoryCard({
-  src: "img/icon-collabcode.png",
-  alt: "Mascote Collabcode"
+const $memoryCardWoman = createMemoryCard({
+  nameClass: "-front",
+  src: "img/icon-woman.png",
+  alt: "Icone Mulher"
 });
 
 $root.insertAdjacentElement("beforeend", $cardsWrapper);
@@ -35,7 +36,21 @@ $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava);
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava);
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardBug);
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardBug);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardWoman);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardWoman);
 
 $root.insertAdjacentElement("beforeend", $cardsWrapper);
+
+const $cardMemory = document.querySelectorAll(".memory-card");
+
+$cardMemory.forEach(($card, cardSelect) => {
+  $card.addEventListener("click", handleClick);
+
+  function handleClick() {
+    $cardMemory.forEach((card, index) => {
+      if (cardSelect === index) {
+        card.classList.toggle("-front");
+      }
+    });
+  }
+});
