@@ -5,25 +5,21 @@ const $cardsWrapper = createCardsWrapper();
 const createMemoryCard = memoryCard();
 
 const $memoryCardJS = createMemoryCard({
-  nameClass: "-front",
   src: "img/icon-js.png",
   alt: "Icone Linguagem JS"
 });
 
 const $memoryCardBug = createMemoryCard({
-  nameClass: "-front",
   src: "img/icon-bug.png",
   alt: "Icone Bug"
 });
 
 const $memoryCardJava = createMemoryCard({
-  nameClass: "-front",
   src: "img/icon-java.png",
   alt: "Icone Linguagem Java"
 });
 
 const $memoryCardWoman = createMemoryCard({
-  nameClass: "-front",
   src: "img/icon-woman.png",
   alt: "Icone Mulher"
 });
@@ -43,14 +39,15 @@ $root.insertAdjacentElement("beforeend", $cardsWrapper);
 
 const $cardMemory = document.querySelectorAll(".memory-card");
 
-$cardMemory.forEach(($card, cardSelect) => {
-  $card.addEventListener("click", handleClick);
 
-  function handleClick() {
-    $cardMemory.forEach((card, index) => {
-      if (cardSelect === index) {
-        card.classList.toggle("-front");
-      }
-    });
-  }
-});
+// $cardMemory.forEach(($card, cardSelect) => {
+//   $card.addEventListener("click", handleClick);
+
+//   function handleClick() {
+//     $cardMemory.forEach((card, index) => {
+//       if (cardSelect === index) {
+//         card.classList.toggle("-front");
+//       }
+//     });
+//   }
+// });
