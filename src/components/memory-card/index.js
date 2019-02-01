@@ -8,6 +8,8 @@ const memoryCard = () => {
     width: 155px;
     height: 155px;
     position: relative;
+    transition: transform 400ms ease-in-out;
+    transform-style: preserve-3d;
   }
   .memory-card .card {
     width: 100%;
@@ -22,6 +24,11 @@ const memoryCard = () => {
     position: absolute;
   }
 
+  .memory-card.-active {
+    transform: rotateY(180deg);
+  }
+
+
   .memory-card.-active .card {
     display: none;
   }
@@ -32,6 +39,7 @@ const memoryCard = () => {
   
   .memory-card .card.-front {
     background-color: #fff;
+    transform: rotateY(180deg);
   }
   
   .memory-card .card.-front::before {
@@ -77,7 +85,25 @@ const memoryCard = () => {
     `;
 };
 
+let selectedCard = 0;
 
 const handleClick = $component => {
-  $component.classList.toggle("-active");
+  if (selectedCard == 2) return;
+  if (selectedCard < 2) {
+    selectedCard++;
+    $component.classList.toggle("-active");
+  }
+
+  if (selectedCard == 2) {
+    setTimeout(() => {
+      $cardActive = document.querySelectorAll(".memory-card.-active");
+
+      $cardActive.forEach($element => {
+        $element.classList.remove("-active");
+      });
+
+      selectedCard = 0;
+    }, 1400);
+  }
+
 }
