@@ -38,16 +38,3 @@ $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardWoman);
 $root.insertAdjacentElement("beforeend", $cardsWrapper);
 
 const $cardMemory = document.querySelectorAll(".memory-card");
-
-
-// $cardMemory.forEach(($card, cardSelect) => {
-//   $card.addEventListener("click", handleClick);
-
-//   function handleClick() {
-//     $cardMemory.forEach((card, index) => {
-//       if (cardSelect === index) {
-//         card.classList.toggle("-front");
-//       }
-//     });
-//   }
-// });
