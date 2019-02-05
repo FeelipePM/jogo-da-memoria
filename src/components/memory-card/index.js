@@ -85,25 +85,22 @@ const memoryCard = () => {
     `;
 };
 
-let selectedCard = 0;
-
 const handleClick = $component => {
-  if (selectedCard == 2) return;
-  if (selectedCard < 2) {
-    selectedCard++;
+  if (qtdActiveMemoryCard < 2) {
     $component.classList.toggle("-active");
   }
 
-  if (selectedCard == 2) {
+  if (qtdActiveMemoryCard === 1) {
     setTimeout(() => {
-      $cardActive = document.querySelectorAll(".memory-card.-active");
-
-      $cardActive.forEach($element => {
-        $element.classList.remove("-active");
+      const $activeMemoryCards = document.querySelectorAll(".memory-card.-active");
+      $activeMemoryCards.forEach( $memoryCard => {
+        $memoryCard.classList.remove("-active");
       });
 
-      selectedCard = 0;
-    }, 1400);
+      qtdActiveMemoryCard = 0;
+    }, 1500); 
   }
+  
+};
 
-}
+
