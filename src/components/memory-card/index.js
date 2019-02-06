@@ -29,11 +29,13 @@ const memoryCard = () => {
   }
 
 
-  .memory-card.-active .card {
+  .memory-card.-active .card,
+  .memory-card.-score .card {
     display: none;
   }
 
-  .memory-card.-active .card.-front {
+  .memory-card.-active .card.-front,
+  .memory-card.-score .card.-front {
     display: flex;
   }
   
@@ -91,16 +93,30 @@ const handleClick = $component => {
   }
 
   if (qtdActiveMemoryCard === 1) {
-    setTimeout(() => {
-      const $activeMemoryCards = document.querySelectorAll(".memory-card.-active");
-      $activeMemoryCards.forEach( $memoryCard => {
-        $memoryCard.classList.remove("-active");
-      });
+    const $memoryCards = document.querySelectorAll(".memory-card.-active");
 
-      qtdActiveMemoryCard = 0;
-    }, 1500); 
-  }
+    const $memoryCard1 = $memoryCards[0].querySelector(".-front .icon").getAttribute("alt");
+    const $memoryCard2 = $memoryCards[1].querySelector(".-front .icon").getAttribute("alt")
+    
+    if($memoryCard1 === $memoryCard2) {
+
+      console.log("São Iguais");
+        $memoryCards.forEach($memoryCard => {
+          $memoryCard.classList.add("-score");
+          $memoryCard.classList.remove("-active");
+        });
+
+    } else {
+      setTimeout(() => {
+        const $activeMemoryCards = document.querySelectorAll(".memory-card.-active");
+        $activeMemoryCards.forEach( $memoryCard => {
+          $memoryCard.classList.remove("-active");
+        });
   
+        qtdActiveMemoryCard = 0;
+      }, 1500); 
+    }
+    }
 };
 
 
