@@ -73,7 +73,7 @@ const memoryCard = () => {
   $head.insertBefore($style, null);
 
   return ({ src, alt }) =>
-    `<div class="memory-card" onClick="handleClick(this)"> 
+    `<div class="memory-card" onClick="logic.handleClick(this)"> 
     <article class="card -front">
     <img class='icon' 
       src='${src}' 
@@ -93,48 +93,52 @@ const memoryCard = () => {
     `;
 };
 
-const handleClick = $component => {
-  if (!$component.classList.contains("-active")) {
-    activeMemoryCard($component);
-    checkSure();
-  }
-};
+const logic = (function() {
+  return {
+    handleClick: function($component) {
+      if (!$component.classList.contains("-active")) {
+        logic.activeMemoryCard($component);
+        logic.checkSure();
+      }
+    },
 
-function activeMemoryCard($component) {
-  if (qtdActiveMemoryCard < 2) {
-    $component.classList.add("-active");
-  }
-}
+    activeMemoryCard: function($component) {
+      if (store.qtdActiveMemoryCard < 2) {
+        $component.classList.add("-active");
+      }
+    },
 
-function checkSure() {
-  if (qtdActiveMemoryCard === 1) {
-    const $activeMemoryCards = document.querySelectorAll(
-      ".memory-card.-active"
-    );
+    checkSure: function() {
+      if (store.qtdActiveMemoryCard === 1) {
+        const $activeMemoryCards = document.querySelectorAll(
+          ".memory-card.-active"
+        );
 
-    const $memoryCard1 = $activeMemoryCards[0]
-      .querySelector(".-front .icon")
-      .getAttribute("src");
-    const $memoryCard2 = $activeMemoryCards[1]
-      .querySelector(".-front .icon")
-      .getAttribute("src");
+        const $memoryCard1 = $activeMemoryCards[0]
+          .querySelector(".-front .icon")
+          .getAttribute("src");
+        const $memoryCard2 = $activeMemoryCards[1]
+          .querySelector(".-front .icon")
+          .getAttribute("src");
 
-    if ($memoryCard1 === $memoryCard2) {
-      store.score = store.score + 5;
-      console.log("Score:", store.score);
+        if ($memoryCard1 === $memoryCard2) {
+          store.score = store.score + 5;
+          console.log("Score:", store.score);
 
-      $activeMemoryCards.forEach($memoryCard => {
-        $memoryCard.classList.add("-score");
-        $memoryCard.classList.remove("-active");
-      });
-    } else {
-      setTimeout(() => {
-        $activeMemoryCards.forEach($memoryCard => {
-          $memoryCard.classList.remove("-active");
-        });
+          $activeMemoryCards.forEach($memoryCard => {
+            $memoryCard.classList.add("-score");
+            $memoryCard.classList.remove("-active");
+          });
+        } else {
+          setTimeout(() => {
+            $activeMemoryCards.forEach($memoryCard => {
+              $memoryCard.classList.remove("-active");
+            });
 
-        qtdActiveMemoryCard = 0;
-      }, 1500);
+            store.qtdActiveMemoryCard = 0;
+          }, 1000);
+        }
+      }
     }
-  }
-}
+  };
+})();
