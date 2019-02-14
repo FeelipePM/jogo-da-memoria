@@ -2,8 +2,9 @@
   const $root = document.querySelector("#root");
 
   const $cardsWrapper = createCardsWrapper();
-
   const createMemoryCard = memoryCard.create();
+
+  const $pointBar = pointBar.create();
 
   const $memoryCardJS = createMemoryCard({
     src: "img/icon-js.png",
@@ -25,8 +26,6 @@
     alt: "Icone Mulher"
   });
 
-  $root.insertAdjacentElement("beforeend", $cardsWrapper);
-
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS);
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardBug);
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJava);
@@ -36,6 +35,7 @@
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardWoman);
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardJS);
 
+  $root.insertAdjacentHTML("afterbegin", $pointBar);
   $root.insertAdjacentElement("beforeend", $cardsWrapper);
 
   const $cardMemory = document.querySelectorAll(".memory-card");
