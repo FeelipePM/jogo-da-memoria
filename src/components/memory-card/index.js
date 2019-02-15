@@ -123,8 +123,9 @@ const memoryCard = (function() {
         .getAttribute("src");
 
       if ($memoryCard1 === $memoryCard2) {
-        store.score = store.score + 5;
-        console.log("Score:", store.score);
+        store.score = store.score + 15;
+        const $number = document.querySelector(".number");
+        $number.textContent = store.score;
 
         $activeMemoryCards.forEach($memoryCard => {
           $memoryCard.classList.add("-score");

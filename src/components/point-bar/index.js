@@ -7,18 +7,43 @@ const pointBar = (function() {
 
     $style.textContent = `
       .point-bar {
-        background-color: #3a4042;
+        background-color: #6c5ce7;
         height: 40px;
         text-align: center;
         font-family: 'Comfortaa', sans-serif;
       }
 
       .point-bar > .number {
-        font-size: 30px;
+        font-size: 20px;
         line-height: 40px;
         color: #FFF;
         font-weight: bold;
       }
+
+      .start::after {
+        content: "";
+        padding: 40px;
+        position: absolute;
+        bottom: 10px;
+        left: 40%;
+        background-color: #fff;
+        border-radius: 50%;
+        z-index: 1;
+        box-shadow: 0px 0px 10px 3px #636e72;
+        border: 5px solid #6c5ce7;
+      }
+
+      .text {
+        text-transform: uppercase;
+        position: absolute;
+        bottom: 43px;
+        left: 45%;
+        z-index: 2;
+        font-family: 'Comfortaa', sans-serif;
+        color: #6c5ce7;
+        font-weight: bold;
+      }
+
       `;
 
     $head.insertBefore($style, null);
@@ -29,6 +54,9 @@ const pointBar = (function() {
 
     return `
       <header class="point-bar">
+        <span class="start">
+        <span class="text">Start</span>
+        </span>
         <span class="number">0</span>
       </header>
     `;
