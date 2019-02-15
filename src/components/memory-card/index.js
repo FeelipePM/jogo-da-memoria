@@ -32,7 +32,6 @@ const memoryCard = (function() {
 
   .memory-card.-score {
     transform: rotateY(540deg);
-    background-color: green;
     border-radius: 20px;
     transition: all 1000ms;
   }

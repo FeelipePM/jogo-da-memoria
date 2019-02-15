@@ -20,12 +20,16 @@ const pointBar = (function() {
         font-weight: bold;
       }
 
+      .start {
+        display: flex;
+        justify-content: center;
+      }
+
       .start::after {
         content: "";
         padding: 40px;
         position: absolute;
         bottom: 10px;
-        left: 40%;
         background-color: #fff;
         border-radius: 50%;
         z-index: 1;
@@ -37,9 +41,7 @@ const pointBar = (function() {
         text-transform: uppercase;
         position: absolute;
         bottom: 43px;
-        left: 45%;
         z-index: 2;
-        font-family: 'Comfortaa', sans-serif;
         color: #6c5ce7;
         font-weight: bold;
       }
