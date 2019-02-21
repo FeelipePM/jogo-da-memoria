@@ -25,20 +25,34 @@ const gameButton = (function () {
           box-shadow: 1px 1px 5px #3a4042;
           z-index: 2;
         }
+
+        .game-button.-start {
+          display: none;
+        }
       `;
     $head.insertBefore($style, null);
   }
 
+  module.handleClick = () => {
+    const $startGame = document.querySelector(".cards-layer");
+    const $gameButton = document.querySelector(".game-button");
+
+    $startGame.classList.add("-start");
+    $gameButton.classList.add("-start");
+
+  };
+
   module.render = () => {
     module._style();
     return `
-      <button class="game-button">Start</button>
+      <button class="game-button" onclick="gameButton.handleClick()">Start</button>
     `;
   };
 
 
   return {
-    render: module.render
+    render: module.render,
+    handleClick: module.handleClick
   };
 })();
 

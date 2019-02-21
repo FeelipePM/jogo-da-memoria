@@ -15,6 +15,11 @@ function createCardsWrapper() {
     height: 93vh;
     z-index: 1;
   }
+
+  .cards-layer.-start {
+    z-index: 0;
+  }
+
   .cards-wrapper {
     display: flex;
     flex-wrap: wrap;
