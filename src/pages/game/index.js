@@ -1,10 +1,11 @@
-(function() {
+(function () {
   const $root = document.querySelector("#root");
 
   const $cardsWrapper = createCardsWrapper();
   const createMemoryCard = memoryCard.create();
 
   const $pointBar = pointBar.create();
+  const $gameButton = gameButton.render();
 
   const $memoryCardJS = createMemoryCard({
     src: "img/icon-js.png",
@@ -37,6 +38,7 @@
 
   $root.insertAdjacentHTML("afterbegin", $pointBar);
   $root.insertAdjacentElement("beforeend", $cardsWrapper);
+  $root.insertAdjacentHTML("beforeend", $gameButton);
 
   const $cardMemory = document.querySelectorAll(".memory-card");
 })();
