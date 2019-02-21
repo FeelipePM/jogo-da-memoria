@@ -23,6 +23,7 @@ const gameButton = (function () {
           font-size: 0.9em;
           cursor: pointer;
           box-shadow: 1px 1px 5px #3a4042;
+          z-index: 2;
         }
       `;
     $head.insertBefore($style, null);
@@ -34,6 +35,7 @@ const gameButton = (function () {
       <button class="game-button">Start</button>
     `;
   };
+
 
   return {
     render: module.render
