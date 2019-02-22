@@ -27,7 +27,13 @@ const gameButton = (function () {
         }
 
         .game-button.-start {
-          display: none;
+          width: 0px;
+          height: 0px;
+          font-size: 0em;
+          border: none;
+          transition-property: width height font-size border;
+          transition-timing-function: ease-in-out;
+          transition-duration: 0.5s;
         }
       `;
     $head.insertBefore($style, null);

@@ -18,6 +18,9 @@ function createCardsWrapper() {
 
   .cards-layer.-start {
     z-index: 0;
+    transition-property: z-index;
+    transition-timing-function: ease-in-out;
+    transition-duration: 1.5s;
   }
 
   .cards-wrapper {
