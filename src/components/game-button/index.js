@@ -25,33 +25,14 @@ const gameButton = (function () {
           box-shadow: 1px 1px 5px #3a4042;
           z-index: 2;
         }
-
-        .game-button.-start {
-          width: 0px;
-          height: 0px;
-          font-size: 0em;
-          border: none;
-          transition-property: width height font-size border;
-          transition-timing-function: ease-in-out;
-          transition-duration: 0.5s;
-        }
       `;
     $head.insertBefore($style, null);
   }
 
-  module.handleClick = () => {
-    const $startGame = document.querySelector(".cards-layer");
-    const $gameButton = document.querySelector(".game-button");
-
-    $startGame.classList.add("-start");
-    $gameButton.classList.add("-start");
-
-  };
-
-  module.render = () => {
+  module.render = content => {
     module._style();
     return `
-      <button class="game-button" onclick="gameButton.handleClick()">Start</button>
+      <button class="game-button">${content}</button>
     `;
   };
 
