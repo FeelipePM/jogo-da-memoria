@@ -23,7 +23,10 @@ const gameButton = (function () {
           font-size: 0.9em;
           cursor: pointer;
           box-shadow: 1px 1px 5px #3a4042;
-          z-index: 2;
+          transition: opacity 200ms linear;
+        }
+        .game-button.-disable {
+          opacity: 0;
         }
       `;
     $head.insertBefore($style, null);
