@@ -11,7 +11,7 @@ const gameButton = (function () {
           height: 80px;
           border-radius: 50%;
           position: absolute;
-          bottom: 10px;
+          bottom: 30px;
           left: 50%;
           transform: translateX(-50%);
           border: 3px solid #6c5ce7;
@@ -23,10 +23,13 @@ const gameButton = (function () {
           font-size: 0.9em;
           cursor: pointer;
           box-shadow: 1px 1px 5px #3a4042;
-          transition: opacity 200ms linear;
+          transition: all 1s linear;
         }
         .game-button.-disable {
+          transform: scale(2.5);
+          transform-origin: 80%;
           opacity: 0;
+          
         }
       `;
     $head.insertBefore($style, null);
