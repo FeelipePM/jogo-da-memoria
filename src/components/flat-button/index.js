@@ -7,7 +7,8 @@ const flatButton = (function() {
 
     $style.textContent = `
       .flat-button {
-        color: #fffcee;
+        background-color: #EAE6DA;
+        color: #FFFCEE;
         font-size: 24px;
         font-weight: bold;
         width: 50%;
@@ -15,12 +16,9 @@ const flatButton = (function() {
         text-transform: uppercase;
       }
 
-      .flat-button.-inactive {
-        background-color: #EAE6DA;
-      }
-
       .flat-button.-active {
         background-color: #F25A70;
+        color: #FFF;
       }
       
     `;
@@ -28,9 +26,9 @@ const flatButton = (function() {
     $head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.render = (content, test) => {
+  module.render = (content = "", variation) => {
     module._style();
-    return `<button class="flat-button ${test}">${content}</button>`;
+    return `<button class="flat-button ${variation}">${content}</button>`;
   };
 
   return {
