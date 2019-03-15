@@ -9,6 +9,9 @@ const iconCollab = (function() {
       .collab {
         width: 171px;
         height: 175px;
+        position: absolute;
+        top: 15%;
+        left: 30%;
       }
       
     `;

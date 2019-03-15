@@ -10,6 +10,9 @@ const message = (function() {
         color: #F25A70;
         text-transform: uppercase;
         font-size: 24px;
+        position: absolute;
+        top: 40%;
+        left: 30%;
       }
       
     `;
