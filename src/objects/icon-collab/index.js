@@ -10,8 +10,9 @@ const iconCollab = (function() {
         width: 171px;
         height: 175px;
         position: absolute;
+        transform: translateX(-50%);
         top: 15%;
-        left: 30%;
+        left: 50%;
       }
       
     `;

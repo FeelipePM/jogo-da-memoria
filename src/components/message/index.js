@@ -11,8 +11,9 @@ const message = (function() {
         text-transform: uppercase;
         font-size: 24px;
         position: absolute;
+        transform: translateX(-50%);
         top: 40%;
-        left: 30%;
+        left: 50%;
       }
       
     `;
