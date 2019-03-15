@@ -1,4 +1,4 @@
-const iconCollab = (function() {
+const message = (function() {
   const module = {};
 
   module._style = () => {
@@ -6,15 +6,13 @@ const iconCollab = (function() {
     const $style = document.createElement("style");
 
     $style.textContent = `
-      .collab {
-        width: 171px;
-        height: 175px;
-<<<<<<< HEAD
-=======
+      .message {
+        color: #F25A70;
+        text-transform: uppercase;
+        font-size: 24px;
         position: absolute;
-        top: 15%;
+        top: 40%;
         left: 30%;
->>>>>>> 65287fb15ecd5b6c094ed40d272a05040263716c
       }
       
     `;
@@ -24,7 +22,7 @@ const iconCollab = (function() {
 
   module.render = () => {
     module._style();
-    return `<img class="collab" src="img/icon-collabcode.png" alt="Icone Collabcode"></img>`;
+    return `<h1 class="message">Welcome!<h1>`;
   };
 
   return {
