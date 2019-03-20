@@ -1,4 +1,4 @@
-const message = (function() {
+const titleCollabCode = (function() {
   const module = {};
 
   module._style = () => {
@@ -6,14 +6,11 @@ const message = (function() {
     const $style = document.createElement("style");
 
     $style.textContent = `
-      .message {
+      .title-collabcode {
         color: #F25A70;
         text-transform: uppercase;
         font-size: 24px;
-        position: absolute;
-        transform: translateX(-50%);
-        top: 40%;
-        left: 50%;
+        letter-spacing: 0.6px;
       }
       
     `;
@@ -21,9 +18,9 @@ const message = (function() {
     $head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.render = () => {
+  module.render = content => {
     module._style();
-    return `<h1 class="message">Welcome!<h1>`;
+    return `<h1 class="title-collabcode">${content}<h1>`;
   };
 
   return {

@@ -3,11 +3,13 @@
 
   const $loginButton = flatButton.render("Log in");
   const $signUpButton = flatButton.render("Sign up", true);
-  const $iconCollab = iconCollab.render();
-  const $message = message.render();
+
+  const $logoCollabCode = logoCollabCode.render();
+  const $titleCollabCode = titleCollabCode.render("Welcome!");
+
+  const $logoWrapper = logoWrapper.render($logoCollabCode, $titleCollabCode);
 
   $root.insertAdjacentHTML("beforeend", $loginButton);
   $root.insertAdjacentHTML("beforeend", $signUpButton);
-  $root.insertAdjacentHTML("beforeend", $iconCollab);
-  $root.insertAdjacentHTML("beforeend", $message);
+  $root.insertAdjacentHTML("beforeend", $logoWrapper);
 })();

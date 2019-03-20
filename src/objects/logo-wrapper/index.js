@@ -1,4 +1,4 @@
-const iconCollab = (function() {
+const logoWrapper = (function() {
   const module = {};
 
   module._style = () => {
@@ -6,13 +6,9 @@ const iconCollab = (function() {
     const $style = document.createElement("style");
 
     $style.textContent = `
-      .collab {
-        width: 171px;
-        height: 175px;
-        position: absolute;
-        transform: translateX(-50%);
-        top: 15%;
-        left: 50%;
+      .logo-wrapper {
+        text-align: center;
+        transform: translateY(-25%);
       }
       
     `;
@@ -20,9 +16,9 @@ const iconCollab = (function() {
     $head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.render = () => {
+  module.render = (...$children) => {
     module._style();
-    return `<img class="collab" src="img/icon-collabcode.png" alt="Icone Collabcode"></img>`;
+    return `<div class="logo-wrapper">${$children.join("")}</div>`;
   };
 
   return {
