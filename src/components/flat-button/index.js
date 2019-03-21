@@ -17,6 +17,10 @@ const flatButton = (function() {
         height: 176px;
         text-transform: uppercase;
       }
+
+      .text {
+        vertical-align: 30px;
+      }
       
     `;
 
@@ -26,7 +30,9 @@ const flatButton = (function() {
   module.render = (content = "", active = false) => {
     module._id++;
     module._style(active);
-    return `<button class="flat-button-${module._id}">${content}</button>`;
+    return `<button class="flat-button-${
+      module._id
+    }"><span class="text">${content}</span></button>`;
   };
 
   return {
