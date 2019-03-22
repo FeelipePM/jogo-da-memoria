@@ -32,17 +32,31 @@ const inputField = (function() {
     $head.insertAdjacentElement("beforeend", $style);
   };
 
+  module.validation = email => {
+    const regex = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/;
+
+    if (email.value.trim().match(regex) == null) {
+      return console.log(true);
+    } else {
+      if (email.value == "") {
+        return console.log(false);
+      } else {
+        return console.log(true);
+      }
+    }
+  };
+
   module.render = (label, input) => {
-    module._id++;
     module._style();
     return `
     <form class="input-field">
       <Label class="label-email">${label}</label>
-      <input class="input" placeholder="${input}"></input>
+      <input class="input" placeholder="${input}" onkeyup="inputField.validation(this)">
     </form>`;
   };
 
   return {
-    render: module.render
+    render: module.render,
+    validation: module.validation
   };
 })();
