@@ -1,3 +1,5 @@
-body {
+body,
+input {
   font-family: 'Comfortaa', sans-serif;
+  border: none;
 }

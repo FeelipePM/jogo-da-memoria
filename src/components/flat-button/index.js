@@ -9,17 +9,17 @@ const flatButton = (function() {
 
     $style.textContent = `
       .flat-button-${module._id} {
+        box-sizing: border-box;
+        display: inline-flex;
+        justify-content: center;
         background-color: ${active ? "#F25A70" : "#EAE6DA"};
         color: ${active ? "#FFF" : "#FFFCEE"};
         font-size: 24px;
         font-weight: bold;
         width: 50%;
         height: 176px;
+        padding-top: 60px;
         text-transform: uppercase;
-      }
-
-      .text {
-        vertical-align: 30px;
       }
       
     `;
@@ -30,9 +30,7 @@ const flatButton = (function() {
   module.render = (content = "", active = false) => {
     module._id++;
     module._style(active);
-    return `<button class="flat-button-${
-      module._id
-    }"><span class="text">${content}</span></button>`;
+    return `<button class="flat-button-${module._id}">${content}</button>`;
   };
 
   return {
