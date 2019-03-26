@@ -16,6 +16,7 @@
   const $inputPassConfirmCollabCode = inputCollabCode.render(
     "corfirm your password"
   );
+  const $buttonCollabCode = buttonCollabCode.render("Submit");
 
   const $logoWrapper = logoWrapper.render($logoCollabCode, $titleCollabCode);
 
@@ -30,4 +31,5 @@
   $root.insertAdjacentHTML("beforeend", $inputPasswordCollabCode);
   $root.insertAdjacentHTML("beforeend", $labelPassConfirmCollabCode);
   $root.insertAdjacentHTML("beforeend", $inputPassConfirmCollabCode);
+  $root.insertAdjacentHTML("beforeend", $buttonCollabCode);
 })();
