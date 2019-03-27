@@ -17,6 +17,10 @@ const inputCollabCode = (function() {
         padding-bottom: 12px;
         border-bottom: 2px solid rgba(58,64, 66, 0.5);
       }
+
+      .input-collabcode + .label-collabcode {
+        margin-top: 30px;
+      }
     `;
 
     $head.insertAdjacentElement("beforeend", $style);

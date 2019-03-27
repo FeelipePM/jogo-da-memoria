@@ -6,30 +6,12 @@
 
   const $logoCollabCode = logoCollabCode.render();
   const $titleCollabCode = titleCollabCode.render("Welcome!");
-  const $labelNameCollabCode = labelCollabCode.render("Username");
-  const $inputNameCollabCode = inputCollabCode.render("name-example");
-  const $labelCollabCode = labelCollabCode.render("E-mail");
-  const $inputCollabCode = inputCollabCode.render("example@email.com");
-  const $labelPasswordCollabCode = labelCollabCode.render("Password");
-  const $inputPasswordCollabCode = inputCollabCode.render("your password");
-  const $labelPassConfirmCollabCode = labelCollabCode.render("Cofirm Password");
-  const $inputPassConfirmCollabCode = inputCollabCode.render(
-    "corfirm your password"
-  );
-  const $buttonCollabCode = buttonCollabCode.render("Submit");
 
   const $logoWrapper = logoWrapper.render($logoCollabCode, $titleCollabCode);
+  const $formSignUp = formSignUp.render();
 
   $root.insertAdjacentHTML("beforeend", $loginButton);
   $root.insertAdjacentHTML("beforeend", $signUpButton);
   $root.insertAdjacentHTML("beforeend", $logoWrapper);
-  $root.insertAdjacentHTML("beforeend", $labelNameCollabCode);
-  $root.insertAdjacentHTML("beforeend", $inputNameCollabCode);
-  $root.insertAdjacentHTML("beforeend", $labelCollabCode);
-  $root.insertAdjacentHTML("beforeend", $inputCollabCode);
-  $root.insertAdjacentHTML("beforeend", $labelPasswordCollabCode);
-  $root.insertAdjacentHTML("beforeend", $inputPasswordCollabCode);
-  $root.insertAdjacentHTML("beforeend", $labelPassConfirmCollabCode);
-  $root.insertAdjacentHTML("beforeend", $inputPassConfirmCollabCode);
-  $root.insertAdjacentHTML("beforeend", $buttonCollabCode);
+  $root.insertAdjacentHTML("beforeend", $formSignUp);
 })();
