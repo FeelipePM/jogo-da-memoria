@@ -4,7 +4,7 @@
   "description": "Jogo da Memória",
   "main": "index.html",
   "scripts": {
-    "dev": "live-server" 
+    "dev": "live-server"
   },
   "repository": {
     "type": "git",
