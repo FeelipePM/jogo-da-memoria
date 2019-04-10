@@ -18,7 +18,7 @@ const btnCollabCode = (function() {
       }
 
       .input-collabcode + .btn-collabcode {
-        margin-top: 45px;
+        margin-top: 45px; 
       }
     `;
 
