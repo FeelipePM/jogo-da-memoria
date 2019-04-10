@@ -12,14 +12,20 @@ const labelCollabCode = (function() {
         font-size: 16px;
         opacity: 0.5;
       }
+
+      .label-collabcode.-forget {
+        text-align: right;
+        margin-bottom: 113px;
+      }
+
     `;
 
     $head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.render = content => {
+  module.render = (content, classe = "") => {
     module._style();
-    return `<label class="label-collabcode">${content}</label>`;
+    return `<label class="label-collabcode -${classe}">${content}</label>`;
   };
 
   return {
