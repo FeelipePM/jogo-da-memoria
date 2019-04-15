@@ -16,7 +16,7 @@ const formLogin = (function() {
 
   module._children = () => {
     const $userNameLabel = labelCollabCode.render("Username or E-mail");
-    const $userNameInput = inputCollabCode.render("example@email.com", "text");
+    const $userNameInput = inputCollabCode.render("example@email.com", "email");
 
     const $passwordLabel = labelCollabCode.render("Password");
     const $passwordInput = inputCollabCode.render("your password", "password");
