@@ -19,7 +19,10 @@ const formLogin = (function() {
     const $userNameInput = inputCollabCode.render("example@email.com", "text");
 
     const $passwordLabel = labelCollabCode.render("Password");
+
     const $passwordInput = inputCollabCode.render("your password", "password");
+
+    const $hiddenCollabCode = hiddenCollabCode.render();
 
     const $forgetPassword = labelCollabCode.render(
       "Forget password?",
@@ -32,12 +35,14 @@ const formLogin = (function() {
       ${$userNameLabel}
       ${$userNameInput}
 
-      ${$passwordLabel}
+      ${$passwordLabel}      
       ${$passwordInput}
 
       ${$forgetPassword}
 
       ${$btnCollabCode}
+
+      ${$hiddenCollabCode}
     `;
   };
 
