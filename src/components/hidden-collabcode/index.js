@@ -23,14 +23,33 @@ const hiddenCollabCode = (function() {
 
   module.render = (hidden = "") => {
     module._style();
-    return `<img class='hidden-collabcode -${hidden}' 
+    return `<img class='hidden-collabcode ${hidden}'         onClick="hiddenCollabCode.handleClick(this)"
       src='img/hidden.png' 
       alt='Hidden CollabCode'
       >
     </img>`;
   };
 
+  module.handleClick = $component => {
+    const passHidden = !$component.classList.contains("-hidden");
+
+    passHidden
+      ? module._activeHidden($component)
+      : module._inactiveHidden($component);
+  };
+
+  module._activeHidden = $component => {
+    $component.classList.add("-hidden");
+    document.querySelector(".input-collabcode.-password").type = "text";
+  };
+
+  module._inactiveHidden = $component => {
+    $component.classList.remove("-hidden");
+    document.querySelector(".input-collabcode.-password").type = "password";
+  };
+
   return {
-    render: module.render
+    render: module.render,
+    handleClick: module.handleClick
   };
 })();

@@ -20,7 +20,11 @@ const formLogin = (function() {
 
     const $passwordLabel = labelCollabCode.render("Password");
 
-    const $passwordInput = inputCollabCode.render("your password", "password");
+    const $passwordInput = inputCollabCode.render(
+      "your password",
+      "password",
+      "password"
+    );
 
     const $hiddenCollabCode = hiddenCollabCode.render();
 
