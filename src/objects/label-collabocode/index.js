@@ -23,9 +23,9 @@ const labelCollabCode = (function() {
     $head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.render = (content, classe = "") => {
+  module.render = (content, label = "") => {
     module._style();
-    return `<label class="label-collabcode -${classe}">${content}</label>`;
+    return `<label class="label-collabcode -${label}">${content}</label>`;
   };
 
   return {

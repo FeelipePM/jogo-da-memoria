@@ -22,6 +22,15 @@ const formLogin = (function() {
     });
 
     const $passwordLabel = labelCollabCode.render("Password");
+
+    const $passwordInput = inputCollabCode.render(
+      "your password",
+      "password",
+      "password"
+    );
+
+    const $hiddenCollabCode = hiddenCollabCode.render();
+
     const $passwordInput = inputCollabCode.render({
       placeholder: "your password",
       type: "password"
@@ -38,12 +47,14 @@ const formLogin = (function() {
       ${$userNameLabel}
       ${$userNameInput}
 
-      ${$passwordLabel}
+      ${$passwordLabel}      
       ${$passwordInput}
 
       ${$linkCollab}
 
       ${$btnCollabCode}
+
+      ${$hiddenCollabCode}
     `;
   };
 
